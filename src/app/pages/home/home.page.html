@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="../../assets/header.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+       Principal
+      </ion-button>
+      <ion-button (click)="goProductos()">
+        Productos
+      </ion-button>
+      <ion-button (click)="goPublicaciones()">
+        Publicaciones
+      </ion-button>
+      <ion-button (click)="goNosotros()">
+        Nosotros
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <section>
+    <img src="../../assets/Captura de Pantalla 2020-04-22 a la(s) 9.36.39.png" alt="" class=".principal--img">
+  </section>
+  <ion-grid fixed>
+    <ion-row>
+      <h2><strong>Publicaciones</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let n of ultimaspublish"  size="12" size-lg="4" size-md="6" size-sm="6" size-xs="12" >
+        <ion-card>
+          <ion-card-header>
+            <img [src]="n.img |  imagen: 'noticia'" alt="">
+            <ion-card-subtitle>Publicado por <ion-label color="primary">{{ korg.nombre }}</ion-label></ion-card-subtitle>
+            <ion-card-title>{{ n.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ n.texto }}
+            <ion-item>
+              <ion-button (click)="verPublicacion()" expand="block" fill="clear" shape="round">
+                Ver publicación...
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>Te Recomendamos</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-lg="4" size-md="4" size-sm="6" size-xs="12"
+               *ngFor="let p of producSelect" >
+        <ion-card [ngStyle]="{'display': (p.descripcionCorta !== 'Music Workstation' ? 'none': 'block')}" class="ultimos">
+          <ion-card-header>
+            <img [src]="p.img | productImg" alt="">
+            <ion-card-subtitle>{{ p.descripcionCorta }}</ion-card-subtitle>
+            <ion-card-title>{{ p.nombre }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>Nosotros</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <img [src]="korg.img | imagen: 'marca'" alt="">
+      </ion-col>
+      <ion-col size="6">
+        <div class="nosotros">
+          <h2><strong>{{ korg.nombre }}</strong></h2>
+          <p class="texto">{{korg.descripcionBreve}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="card">
+      <ion-row>
+        <h2>¡¡Contactanos!!</h2>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="floating"><ion-icon slot="start" name="person"></ion-icon> Nombre</ion-label>
+            <ion-input type="text" ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="floating"><ion-icon slot="start" name="mail"></ion-icon> Correo</ion-label>
+            <ion-input type="text" ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label>Aviso de Privacidad</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Comentarios</ion-label>
+            <ion-input type="text" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-button (click)="enviarMail()" expand="block"  shape="round">
+          Enviar
+        </ion-button>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <img src="../../assets/footer.png" alt="">
+  </ion-toolbar>
+</ion-footer>

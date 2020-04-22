@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="../../assets/header.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+       Principal
+      </ion-button>
+      <ion-button (click)="goProductos()">
+        Productos
+      </ion-button>
+      <ion-button (click)="goPublicaciones()">
+        Publicaciones
+      </ion-button>
+      <ion-button (click)="goNosotros()">
+        Nosotros
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <h2><strong>Publicaciones</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
