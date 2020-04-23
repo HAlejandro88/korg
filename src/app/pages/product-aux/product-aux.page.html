@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="../../assets/header.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+       Principal
+      </ion-button>
+      <ion-button (click)="goProductos()">
+        Productos
+      </ion-button>
+      <ion-button (click)="goPublicaciones()">
+        Publicaciones
+      </ion-button>
+      <ion-button (click)="goNosotros()">
+        Nosotros
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <h2>Productos <ion-icon name="play-circle"></ion-icon> {{ producto.nombre }}</h2>
+    </ion-row>
+    <ion-row>
+      <img [src]="producto.img | productImg" alt="">
+    </ion-row>
+    <ion-row>
+      <h2>Productos <ion-icon name="play-circle"></ion-icon> {{ producto.nombre }}</h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ producto.descripcion }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="producto.imgLateralD | productImg: 'imgLateralD'" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

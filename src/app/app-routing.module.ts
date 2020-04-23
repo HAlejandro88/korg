@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'publicaciones',
     loadChildren: () => import('./pages/publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
   },
+  {
+    path: 'publish-aux',
+    loadChildren: () => import('./pages/publish-aux/publish-aux.module').then( m => m.PublishAuxPageModule)
+  },
+  {
+    path: 'product-aux',
+    loadChildren: () => import('./pages/product-aux/product-aux.module').then( m => m.ProductAuxPageModule)
+  },
 ];
 
 @NgModule({

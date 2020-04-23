@@ -30,9 +30,14 @@
       <ion-col *ngFor="let n of ultimaspublish"  size="12" size-lg="4" size-md="6" size-sm="6" size-xs="12" >
         <ion-card>
           <ion-card-header>
-            <img [src]="n.img |  imagen: 'noticia'" alt="">
+            <img [src]="n.img | imagen: 'noticia'" alt="">
             <ion-card-subtitle>Publicado por <ion-label color="primary">{{ korg.nombre }}</ion-label></ion-card-subtitle>
             <ion-card-title>{{ n.title }}</ion-card-title>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
           </ion-card-header>
           <ion-card-content>
             {{ n.texto }}
@@ -119,5 +124,10 @@
 <ion-footer>
   <ion-toolbar>
     <img src="../../assets/footer.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>

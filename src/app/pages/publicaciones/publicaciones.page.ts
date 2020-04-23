@@ -1,6 +1,7 @@
 import { KorgService } from './../../services/korg.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-publicaciones',
@@ -11,10 +12,14 @@ export class PublicacionesPage implements OnInit {
 
   publicaiones: any[] = [];
 
-  constructor(private navCtrl: NavController, private _korgService: KorgService) { }
+  noticias: any[] = [];
+
+  constructor(private navCtrl: NavController, private _korgService: KorgService, 
+              private route: Router) { }
 
   ngOnInit() {
     this.allPublish();
+    this.allNoticies();
   }
 
   goPrincipal() {
@@ -37,5 +42,17 @@ export class PublicacionesPage implements OnInit {
       this.publicaiones = data.publicaciones;
       console.log(this.publicaiones);
     });
+  }
+
+
+  allNoticies() {
+    this._korgService.allNotices().subscribe((data: any) => {
+      this.noticias = data.noticias;
+      console.log(this.noticias, 'noticias');
+    });
+  }
+
+  verMas(id) {
+    this.route.navigate(['/publish-aux', {custom: id}]);
   }
 }

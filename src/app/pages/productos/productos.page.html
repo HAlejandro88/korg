@@ -31,6 +31,13 @@
             <ion-card-subtitle>{{ t.descripcionCorta }}</ion-card-subtitle>
             <ion-card-title>{{ t.nombre }}</ion-card-title>
           </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-button (click)="verMas(t._id)" expand="block" fill="clear" shape="round">
+                ver mas...
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

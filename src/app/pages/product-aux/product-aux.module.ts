@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicacionesPageRoutingModule } from './publicaciones-routing.module';
+import { ProductAuxPageRoutingModule } from './product-aux-routing.module';
 
-import { PublicacionesPage } from './publicaciones.page';
+import { ProductAuxPage } from './product-aux.page';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { PublicacionesPage } from './publicaciones.page';
     FormsModule,
     PipesModule,
     IonicModule,
-    PublicacionesPageRoutingModule
+    ProductAuxPageRoutingModule
   ],
-  declarations: [PublicacionesPage]
+  declarations: [ProductAuxPage]
 })
-export class PublicacionesPageModule {}
+export class ProductAuxPageModule {}

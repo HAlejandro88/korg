@@ -24,12 +24,28 @@
       <h2><strong>Publicaciones</strong></h2>
     </ion-row>
     <ion-row>
-      <ion-col size="6">
+      <ion-col *ngFor="let n of publicaiones"  size="12" size-lg="4" size-md="6" size-sm="6" size-xs="12" >
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
+            <img [src]="n.img1 | publisImg" alt="">
+            <ion-card-subtitle>Publicado por <ion-label color="primary">Korg México</ion-label></ion-card-subtitle>
+            <ion-card-title>{{ n.title1 }}</ion-card-title>
+            <ion-item>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+            </ion-item>
           </ion-card-header>
+          <ion-card-content>
+            {{ n.texto1 }}
+            <ion-item>
+              <ion-button (click)="verMas(n._id)" expand="block" fill="clear" shape="round">
+                Ver mas...
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

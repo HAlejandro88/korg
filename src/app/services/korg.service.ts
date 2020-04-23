@@ -31,4 +31,12 @@ export class KorgService {
   allNotices() {
     return this.http.get(`${URL}/noticias`);
   }
+
+  especificNoticie(id) {
+    return this.http.get(`${URL}/noticias/${id}`);
+  }
+
+  especificPublish(id) {
+    return this.http.get(`${URL}/publicaciones/${id}`);
+  }
 }

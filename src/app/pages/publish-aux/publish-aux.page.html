@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="../../assets/header.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+       Principal
+      </ion-button>
+      <ion-button (click)="goProductos()">
+        Productos
+      </ion-button>
+      <ion-button (click)="goPublicaciones()">
+        Publicaciones
+      </ion-button>
+      <ion-button (click)="goNosotros()">
+        Nosotros
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <h2>Publicaciones &nbsp;<ion-icon name="play-circle"></ion-icon> &nbsp; <strong>{{ publicacion.title1 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <img [src]="publicacion.img1 | publisImg" alt="">
+    </ion-row>
+    <ion-row>
+      <h2>Publicaciones &nbsp;<ion-icon name="play-circle"></ion-icon> &nbsp; <strong>{{ publicacion.title1 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto1 }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="publicacion.img2 | publisImg: 'img2'" alt="" class="publish--img">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>{{ publicacion.title2 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto2 }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="publicacion.img3 | publisImg: 'img3'" alt="" class="publish--img">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>{{ publicacion.title3 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto3 }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="publicacion.img4 | publisImg: 'img4'" alt="" class="publish--img">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>{{ publicacion.title4 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto4 }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="publicacion.img5 | publisImg: 'img5'" alt="" class="publish--img">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>{{ publicacion.title5 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto5 }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="publicacion.img6 | publisImg: 'img6'" alt="" class="publish--img">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>{{ publicacion.title6 }}</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p>{{ publicacion.texto6 }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
